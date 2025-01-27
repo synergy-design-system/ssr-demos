@@ -23,3 +23,14 @@ Simple SSR Demo projects for all of our supported frameworks
 
 ---
 
+### Angular:
+
+#### General observations:
+
+- Seems to work pretty well by default :)
+- Profits heavily from the new angular single import feature as unwanted components just break the build (see below).
+- Some components are not SSR ready yet. Examples are syn-alert (creates the stack via `document.createElement`), syn-combobox (`createElementFromTemplateResult`)
+
+#### Error messages
+
+- document is not defined (e.g. syn-alert)

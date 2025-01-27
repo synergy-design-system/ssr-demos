@@ -2,10 +2,21 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { SynergyFormsModule } from '@synergy-design-system/angular/modules/forms';
+// import { SynButtonComponent, SynInputComponent } from '@synergy-design-system/angular';
 import { SynButtonComponent } from '@synergy-design-system/angular/components/button';
 import { SynInputComponent } from '@synergy-design-system/angular/components/input';
+import { SynTextareaComponent } from '@synergy-design-system/angular/components/textarea';
+import { SynCheckboxComponent } from '@synergy-design-system/angular/components/checkbox';
+import { SynSwitchComponent } from '@synergy-design-system/angular/components/switch';
+import { SynSelectComponent } from '@synergy-design-system/angular/components/select';
+import { SynOptionComponent } from '@synergy-design-system/angular/components/option';
+import { SynOptgroupComponent } from '@synergy-design-system/angular/components/optgroup';
 
 const initialData = {
+  role: '',
+  switch: false,
+  newsletterStandard: false,
+  comment: 'Some stupid comment',
   name: 'Jens',
 };
 
@@ -17,7 +28,13 @@ const initialData = {
     ReactiveFormsModule,
     SynergyFormsModule,
     SynButtonComponent,
+    SynCheckboxComponent,
+    SynSwitchComponent,
     SynInputComponent,
+    SynTextareaComponent,
+    SynSelectComponent,
+    SynOptionComponent,
+    SynOptgroupComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
