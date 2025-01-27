@@ -1,5 +1,5 @@
 import Image from "next/image";
-import '@synergy-design-system/components/components/button/button.js';
+import { SynButton, SynInput } from '@/components/Synergy';
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -21,7 +21,8 @@ export default function Home() {
           <li>Save and see your changes instantly.</li>
         </ol>
 
-        <syn-button variant="filled">I am the mighty syn button</syn-button>
+        <SynInput label="Something" />
+        <SynButton variant="filled">I am the mighty syn button</SynButton>
 
         <div className={styles.ctas}>
           <a
