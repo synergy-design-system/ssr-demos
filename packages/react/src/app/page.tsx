@@ -1,4 +1,5 @@
 import Image from "next/image";
+import '@synergy-design-system/components/components/button/button.js';
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -19,6 +20,8 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
+
+        <syn-button variant="filled">I am the mighty syn button</syn-button>
 
         <div className={styles.ctas}>
           <a
