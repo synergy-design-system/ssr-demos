@@ -1,0 +1,15 @@
+{
+  "author": {
+    "name": "SICK Global UX Foundation",
+    "url": "https://www.sick.com"
+  },
+  "description": "React Javascript SSR Demo",
+  "license": "ISC",
+  "name": "@synergy-design-system/ssr-demo-react",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synergy-design-system/ssr-demos.git",
+    "directory": "packages/react"
+  },
+  "version": "1.0.0"
+}
