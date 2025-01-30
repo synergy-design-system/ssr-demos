@@ -9,6 +9,12 @@ import { type SynTabShowEvent } from '@synergy-design-system/components';
 const Demos = Object.entries(DemoImports);
 const activeDemo = Demos.at(0)?.at(0);
 
+type SynSSRError = {
+  component: string;
+  link?: string;
+  description: string;
+};
+
 @Component({
   selector: 'all-components',
   standalone: true,
@@ -21,6 +27,25 @@ const activeDemo = Demos.at(0)?.at(0);
   templateUrl: './allcomponents.component.html',
 })
 export class AllComponents {
+
+  ssrErrors: SynSSRError[] = [
+    {
+      component: 'syn-alert',
+      description: 'Uses document.createElement outside of the browser environment',
+      link: 'https://github.com/synergy-design-system/synergy-design-system/blob/main/packages/components/src/components/alert/alert.component.ts#L25',
+    },
+    {
+      component: 'syn-tab-group',
+      description: 'Useds scrollEnd polyfill which is not SSR ready',
+      link: 'https://github.com/synergy-design-system/synergy-design-system/blob/main/packages/components/src/internal/scrollend-polyfill.ts#L37',
+    },
+    {
+      component: 'syn-validate',
+      description: 'Uses <syn-alert> as s dependency, which fails in SSR (see above)',
+      link: 'https://github.com/synergy-design-system/synergy-design-system/blob/main/packages/components/src/components/validate/validate.component.ts#L37',
+    }
+  ];
+
   activeDemo: typeof activeDemo = activeDemo;
   Demos: typeof Demos = Demos;
 

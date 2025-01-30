@@ -1,0 +1,5 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: var(--syn-color-neutral-100);
+  color: var(--syn-color-neutral-900);
+}

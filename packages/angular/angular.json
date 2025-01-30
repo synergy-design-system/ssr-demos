@@ -25,6 +25,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@synergy-design-system/assets/src/icons",
+                "output": "/assets/icons"
               }
             ],
             "styles": [
