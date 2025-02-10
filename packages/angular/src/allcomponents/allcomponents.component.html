@@ -1,31 +1,32 @@
-<!-- Tabs break :( -->
 <h1>Components are all there :)</h1>
 
-<h4>Pile of shame:</h4>
+@if (ssrErrors.length) {
+  <h4>There are some components that are not working in the server side rendering</h4>
+  <dl>
+    @for (ssrError of ssrErrors; track ssrError) {
+      <dt>{{ssrError.component}}</dt>
+      <dd>
+        @if (ssrError.link) {
+          <a href="{{ssrError.link}}">{{ssrError.description}}</a>
+        }
+        @else {
+          {{ssrError.description}}
+        }
+      </dd>
+    }
+  </dl>
 
-<dl>
-  @for (ssrError of ssrErrors; track ssrError) {
-    <dt>{{ssrError.component}}</dt>
-    <dd>
-      @if (ssrError.link) {
-        <a href="{{ssrError.link}}">{{ssrError.description}}</a>
-      }
-      @else {
-        {{ssrError.description}}
-      }
-    </dd>
-  }
-</dl>
+}
 
-@for (demo of Demos; track demo[0]) {
+<!-- @for (demo of Demos; track demo[0]) {
   <div [id]="'tab-content-' + demo[0]" style="display: contents;">
     <h2>{{demo[0]}}</h2>
     <ng-container *ngComponentOutlet="demo[1]"></ng-container>
     <hr />
   </div>
-}
+} -->
 
-<!-- <syn-tab-group
+<syn-tab-group
   (syn-tab-show)="handleTabShow($event)"
 >
   @for (demo of Demos; track demo[0]) {
@@ -46,4 +47,4 @@
       </div>
     </syn-tab-panel>
   }
-</syn-tab-group> -->
+</syn-tab-group>

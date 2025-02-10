@@ -1,5 +1,5 @@
 export * from './Accordion';
-// export * from './Alert';
+export * from './Alert';
 export * from './Badge';
 export * from './Breadcrumb';
 export * from './Button';
@@ -26,8 +26,8 @@ export * from './Range';
 export * from './Select';
 export * from './Spinner';
 export * from './Switch';
-// export * from './TabGroup';
+export * from './TabGroup';
 export * from './Tag';
 export * from './Textarea';
 export * from './Tooltip';
-// export * from './Validate';
+export * from './Validate';
